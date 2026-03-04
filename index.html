@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-controls">
+            <button id="theme-btn" class="ctrl-btn">🌙 Dark Mode</button>
+            <button id="lang-btn" class="ctrl-btn">English</button>
+        </div>
+        <h2 id="app-title">මගේ වැඩ ලැයිස්තුව 📝</h2>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <span id="total-count">0</span>
+                <p id="total-text">මුළු වැඩ</p>
+            </div>
+            <div class="stat-box">
+                <span id="completed-count">0</span>
+                <p id="completed-text">අවසන් කළා</p>
+            </div>
+        </div>
+
+        <div class="progress-wrapper">
+            <div id="progress-bar"></div>
+        </div>
+
+        <div class="search-sort-container" style="display: flex; gap: 10px; margin-bottom: 15px;">
+            <input type="text" id="search-input" placeholder="වැඩක් සොයන්න..." style="flex: 2; margin-bottom: 0;">
+            <select id="sort-select" style="flex: 1; margin-bottom: 0;">
+                <option value="all">සියල්ල</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+
+        <div class="input-grid">
+            <input type="text" id="todo-input" placeholder="අලුත් වැඩක් ඇතුළත් කරන්න...">
+            <div class="sub-inputs" style="display: flex; gap: 10px;">
+                <select id="priority-input">
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+                <input type="date" id="date-input" onclick="this.showPicker()">
+            </div>
+            <button id="add-btn">එකතු කරන්න</button>
+        </div>
+
+        <ul id="todo-list"></ul>
+
+        <div class="deleted-section">
+            <button id="toggle-deleted" class="ctrl-btn-outline">🗑️ මකා දැමූ වැඩ බලන්න</button>
+            <div id="deleted-tasks-container" style="display: none; margin-top: 20px;">
+                <h3 id="deleted-title">මකා දැමූ වැඩ</h3>
+                <ul id="deleted-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
